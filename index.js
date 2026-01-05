@@ -1,4 +1,4 @@
-// Load environment variables from .env (e.g., MONGODB_URI, PORT)
+// Load environment variables from .env 
 require('dotenv').config();
 
 // Core server dependencies
@@ -10,12 +10,12 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Connect to MongoDB using the URI from .env
+// Connect to MongoDB 
 mongoose.connect(process.env.MONGODB_URI)
   .then(() => console.log('Connected to MongoDB'))
   .catch(err => console.error('MongoDB connection error:', err));
 
-// Schema: each profile holds a name and an array of telemetry data points
+// Schema
 const profileSchema = new mongoose.Schema({
   profileName: String,
   data: Array
